@@ -3,15 +3,21 @@ import bio.terra.datarepo.client.ApiClient;
 import bio.terra.datarepo.client.ApiException;
 import bio.terra.datarepo.client.Configuration;
 import bio.terra.datarepo.model.EnumerateBillingProfileModel;
+import com.google.auth.oauth2.AccessToken;
+import com.google.auth.oauth2.GoogleCredentials;
+import com.google.common.collect.Lists;
+
+import java.io.IOException;
 
 public class DataRepoClientExample {
+    public static void main(String[] args) throws ApiException, IOException {
+        GoogleCredentials credentials = GoogleCredentials.getApplicationDefault().createScoped(Lists.newArrayList("email", "profile", "openid"));
+        AccessToken token = credentials.refreshAccessToken();
 
-    public static void main(String[] args) throws ApiException {
         ApiClient apiClient = Configuration.getDefaultApiClient();
         apiClient.setBasePath("https://jade.datarepo-dev.broadinstitute.org");
 
-        // TODO: replace with a token generated from service account JSON
-        apiClient.setAccessToken("ya29.fakeTOKEN");
+        apiClient.setAccessToken(token.getTokenValue());
 
         ResourcesApi api = new ResourcesApi(apiClient);
 

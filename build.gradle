@@ -18,5 +18,7 @@ repositories {
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
 
+    implementation 'com.google.auth:google-auth-library-oauth2-http:0.20.0'
+
     implementation 'bio.terra:datarepo-client:1.0.12-SNAPSHOT'
 }
