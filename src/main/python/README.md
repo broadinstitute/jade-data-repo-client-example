@@ -41,4 +41,5 @@ from step 2 in the input box, and press `Enter` to confirm your input. You
 should see a green lock icon next to the URL if this process is successful.
 
 6. You should be able to `import data_repo_client` in the notebook to start
-interacting with the client! This notebook can then be used on Terra.
+interacting with the client! This notebook can then be used on Terra. For 
+example notebooks using the Data Repo client, see the [*.ipynb files in this directory](.).
