@@ -1,7 +1,7 @@
-# Interactively using the Data Repo client locally in Jupyter
+# Using the Data Repo client locally in Jupyter
 
 These instructions are designed to work with Docker and Visual Studio Code
-(VSCode). If using VSCode, ensure you have the official Jupyter and Python
+(VSCode). When using VSCode, ensure you have the official Jupyter and Python
 extensions installed from Microsoft.
 
 ## Instructions
@@ -40,5 +40,5 @@ pip install data-repo-client
 from step 2 in the input box, and press `Enter` to confirm your input. You
 should see a green lock icon next to the URL if this process is successful.
 
-6. You should be able to `import data_repo_client` in the notebook and start
-playing with the client!
+6. You should be able to `import data_repo_client` in the notebook to start
+interacting with the client! This notebook can then be used on Terra.
