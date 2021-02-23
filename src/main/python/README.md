@@ -1,95 +1,45 @@
-# Creating Python client and Dockerfile
+# Using the Data Repo client locally in Jupyter
 
-Instructions for generating the python client and publishing to a docker image.
+These instructions are designed to work with Docker and Visual Studio Code
+(VSCode). When using VSCode, ensure you have the official Jupyter and Python
+extensions installed from Microsoft.
 
-## Create Python client from OpenAPI specification
+## Instructions
 
-1. Pull the latest version from `jade-data-repo` and make note of the version number
-2. Install version 4.3.1 of `open-generator-cli` from npm (version 5.0.0 causes issues)
-
-```
-npm install
-npm install @openapitools/openapi-generator-cli -g
-openapi-generator-cli version-manager set 4.3.1
-```
-
-3. Generate the Python client
+1. Download and run the Jupyter minimal notebook Docker image
 
 ```
-cd jade-data-repo
-openapi-generator-cli generate -i src/main/resources/api/data-repository-openapi.yaml -g python -o ../data-repo-client --package-name data_repo_client
+docker pull jupyter/minimal-notebook
+docker run --rm -p 8888:8888 --name jupyter jupyter/minimal-notebook
 ```
 
-## Create Python distribution archives for package
-
-https://packaging.python.org/tutorials/packaging-projects/#generating-distribution-archives
-
-4. Navigate to newly created Python client
+2. In the logs, you will see a section similar to the one below, copy the URL
+starting with `http://127.0.0.1:8888` to the clipboard
 
 ```
-cd ../data-repo-client
+[C 20:53:41.359 NotebookApp] 
+    
+    To access the notebook, open this file in a browser:
+        file:///home/jovyan/.local/share/jupyter/runtime/nbserver-8-open.html
+    Or copy and paste one of these URLs:
+        http://2512f4e1ef18:8888/?token=c9ced3dc0e04a74bca8c9802cbfec510777b68e7c52cafb0
+     or http://127.0.0.1:8888/?token=c9ced3dc0e04a74bca8c9802cbfec510777b68e7c52cafb0
 ```
 
-5. Install packaging prerequisites including setuptools and wheel
+3. Install the latest `data-repo-client` inside the Jupyter image as follows:
 
 ```
-python3 -m pip install --user --upgrade setuptools wheel
+docker exec -it jupyter /bin/sh 
+pip install data-repo-client
 ```
 
-6. Update `setup.py` to latest version
+4. Start up VSCode, then select `View -> Command Palette -> Jupyter: Create New Blank Jupyter Notebook`
+(or open an already existing notebook)
 
-7. Generate dist
+5. In the Jupyter menubar, select `Jupyter Server -> Existing`, paste the URL
+from step 2 in the input box, and press `Enter` to confirm your input. You
+should see a green lock icon next to the URL if this process is successful.
 
-```
-python3 setup.py sdist bdist_wheel
-```
-
-8. Check out the `/dist` folder, should be two new files
-
-## Upload package to pipy
-
-https://packaging.python.org/tutorials/packaging-projects/#uploading-the-distribution-archives
-
-9. Get api token and set up your .pypirc file - instructions at link above
-
-10. Install twine
-
-```
-python3 -m pip install --user --upgrade twine
-```
-
-11. Run twine to upload all archives under twiner
-
-```
-python3 -m twine upload --repository data_repo_client dist/*
-```
-
-12. Go to https://pypi.org/project/data-repo-client and see if new version has been successfully updates
-
-## Create new docker image w/ latest version
-
-13. Navigate to folder w/ dockerfile
-
-14. Update dockerfile to specfify the latest version of the data_repo_client
-
-15. Build docker image
-
-```
-docker build . --tag client-VERSIONNUM
-```
-
-## Publish the docker image to container registry
-
-16. Tag the new docker image
-
-```
-docker tag client-VERSIONNUM:latest us.gcr.io/broad-jade-dev/jupyter-shelby-test
-```
-
-17. Push to container registry
-
-```
-docker push us.gcr.io/broad-jade-dev/jupyter-shelby-test
-```
-
-18. Go to gcloud console and to check for new image
+6. You should be able to `import data_repo_client` in the notebook to start
+interacting with the client! This notebook can then be used on Terra. For 
+example notebooks using the Data Repo client, see the [*.ipynb files in this directory](.).
