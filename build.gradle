@@ -1,5 +1,6 @@
 plugins {
     id 'java'
+    id 'application'
 }
 
 group 'bio.terra'
@@ -15,4 +16,8 @@ repositories {
 dependencies {
     implementation 'com.google.auth:google-auth-library-oauth2-http:0.20.0'
     implementation 'bio.terra:datarepo-client:1.47.0-SNAPSHOT'
+}
+
+application {
+    mainClassName = 'DataRepoClientExample'
 }
