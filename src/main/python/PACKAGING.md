@@ -52,6 +52,20 @@ https://packaging.python.org/tutorials/packaging-projects/#uploading-the-distrib
 
 9. Get api token and set up your .pypirc file - instructions at link above
 
+```
+[distutils]
+  index-servers =
+    pypi
+    data_repo_client
+[pypi]
+  username = __token__
+  password = <redacted>
+[data_repo_client]
+  repository = https://upload.pypi.org/legacy/
+  username = __token__
+  password = <redacted>
+```
+
 10. Install twine
 
 ```
