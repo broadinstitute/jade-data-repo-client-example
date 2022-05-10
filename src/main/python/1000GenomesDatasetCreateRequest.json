@@ -1,0 +1,411 @@
+{
+    "defaultProfileId": profileId,
+    "description": datasetDescription,
+    "name": datasetName,
+    "schema": {
+        "tables": [
+            {
+                "name": "sample_info",
+                "columns": [
+                    {
+                        "name": "Sample",
+                        "datatype": "string"
+                    },
+                    {
+                        "name": "Family_ID",
+                        "datatype": "string"
+                    },
+                    {
+                        "name": "Population",
+                        "datatype": "string"
+                    },
+                    {
+                        "name": "Population_Description",
+                        "datatype": "string"
+                    },
+                    {
+                        "name": "Gender",
+                        "datatype": "string"
+                    },
+                    {
+                        "name": "Relationship",
+                        "datatype": "string"
+                    },
+                    {
+                        "name": "Unexpected_Parent_Child",
+                        "datatype": "string"
+                    },
+                    {
+                        "name": "Non_Paternity",
+                        "datatype": "string"
+                    },
+                    {
+                        "name": "Siblings",
+                        "datatype": "string"
+                    },
+                    {
+                        "name": "Grandparents",
+                        "datatype": "string"
+                    },
+                    {
+                        "name": "Avuncular",
+                        "datatype": "string"
+                    },
+                    {
+                        "name": "Half_Siblings",
+                        "datatype": "string"
+                    },
+                    {
+                        "name": "Unknown_Second_Order",
+                        "datatype": "string"
+                    },
+                    {
+                        "name": "Third_Order",
+                        "datatype": "string"
+                    },
+                    {
+                        "name": "In_Low_Coverage_Pilot",
+                        "datatype": "boolean"
+                    },
+                    {
+                        "name": "LC_Pilot_Platforms",
+                        "datatype": "string"
+                    },
+                    {
+                        "name": "LC_Pilot_Centers",
+                        "datatype": "string"
+                    },
+                    {
+                        "name": "In_High_Coverage_Pilot",
+                        "datatype": "boolean"
+                    },
+                    {
+                        "name": "HC_Pilot_Platforms",
+                        "datatype": "string"
+                    },
+                    {
+                        "name": "HC_Pilot_Centers",
+                        "datatype": "string"
+                    },
+                    {
+                        "name": "In_Exon_Targetted_Pilot",
+                        "datatype": "boolean"
+                    },
+                    {
+                        "name": "ET_Pilot_Platforms",
+                        "datatype": "string"
+                    },
+                    {
+                        "name": "ET_Pilot_Centers",
+                        "datatype": "string"
+                    },
+                    {
+                        "name": "Has_Sequence_in_Phase1",
+                        "datatype": "boolean"
+                    },
+                    {
+                        "name": "Phase1_LC_Platform",
+                        "datatype": "string"
+                    },
+                    {
+                        "name": "Phase1_LC_Centers",
+                        "datatype": "string"
+                    },
+                    {
+                        "name": "Phase1_E_Platform",
+                        "datatype": "string"
+                    },
+                    {
+                        "name": "Phase1_E_Centers",
+                        "datatype": "string"
+                    },
+                    {
+                        "name": "In_Phase1_Integrated_Variant_Set",
+                        "datatype": "boolean"
+                    },
+                    {
+                        "name": "Has_Phase1_chrY_SNPS",
+                        "datatype": "boolean"
+                    },
+                    {
+                        "name": "Has_phase1_chrY_Deletions",
+                        "datatype": "boolean"
+                    },
+                    {
+                        "name": "Has_phase1_chrMT_SNPs",
+                        "datatype": "boolean"
+                    },
+                    {
+                        "name": "Main_project_LC_Centers",
+                        "datatype": "string"
+                    },
+                    {
+                        "name": "Main_project_LC_platform",
+                        "datatype": "string"
+                    },
+                    {
+                        "name": "Total_LC_Sequence",
+                        "datatype": "float"
+                    },
+                    {
+                        "name": "LC_Non_Duplicated_Aligned_Coverage",
+                        "datatype": "float"
+                    },
+                    {
+                        "name": "Main_Project_E_Centers",
+                        "datatype": "string"
+                    },
+                    {
+                        "name": "Main_Project_E_Platform",
+                        "datatype": "string"
+                    },
+                    {
+                        "name": "Total_Exome_Sequence",
+                        "datatype": "float"
+                    },
+                    {
+                        "name": "X_Targets_Covered_to_20x_or_greater",
+                        "datatype": "float"
+                    },
+                    {
+                        "name": "VerifyBam_E_Omni_Free",
+                        "datatype": "float"
+                    },
+                    {
+                        "name": "VerifyBam_E_Affy_Free",
+                        "datatype": "float"
+                    },
+                    {
+                        "name": "VerifyBam_E_Omni_Chip",
+                        "datatype": "float"
+                    },
+                    {
+                        "name": "VerifyBam_E_Affy_Chip",
+                        "datatype": "float"
+                    },
+                    {
+                        "name": "VerifyBam_LC_Omni_Free",
+                        "datatype": "float"
+                    },
+                    {
+                        "name": "VerifyBam_LC_Affy_Free",
+                        "datatype": "float"
+                    },
+                    {
+                        "name": "VerifyBam_LC_Omni_Chip",
+                        "datatype": "float"
+                    },
+                    {
+                        "name": "VerifyBam_LC_Affy_Chip",
+                        "datatype": "float"
+                    },
+                    {
+                        "name": "LC_Indel_Ratio",
+                        "datatype": "float"
+                    },
+                    {
+                        "name": "E_Indel_Ratio",
+                        "datatype": "float"
+                    },
+                    {
+                        "name": "LC_Passed_QC",
+                        "datatype": "boolean"
+                    },
+                    {
+                        "name": "E_Passed_QC",
+                        "datatype": "boolean"
+                    },
+                    {
+                        "name": "In_Final_Phase_Variant_Calling",
+                        "datatype": "boolean"
+                    },
+                    {
+                        "name": "Has_Omni_Genotypes",
+                        "datatype": "boolean"
+                    },
+                    {
+                        "name": "Has_Axiom_Genotypes",
+                        "datatype": "boolean"
+                    },
+                    {
+                        "name": "Has_Affy_6_0_Genotypes",
+                        "datatype": "boolean"
+                    },
+                    {
+                        "name": "Has_Exome_LOF_Genotypes",
+                        "datatype": "boolean"
+                    },
+                    {
+                        "name": "EBV_Coverage",
+                        "datatype": "float"
+                    },
+                    {
+                        "name": "DNA_Source_from_Coriell",
+                        "datatype": "string"
+                    },
+                    {
+                        "name": "Has_Sequence_from_Blood_in_Index",
+                        "datatype": "boolean"
+                    },
+                    {
+                        "name": "Super_Population",
+                        "datatype": "string"
+                    },
+                    {
+                        "name": "Super_Population_Description",
+                        "datatype": "string"
+                    }
+                ]
+            },
+            {
+                "name": "pedigree",
+                "columns": [
+                    {
+                        "name": "Family_ID",
+                        "datatype": "string"
+                    },
+                    {
+                        "name": "Individual_ID",
+                        "datatype": "string"
+                    },
+                    {
+                        "name": "Paternal_ID",
+                        "datatype": "string"
+                    },
+                    {
+                        "name": "Maternal_ID",
+                        "datatype": "string"
+                    },
+                    {
+                        "name": "Gender",
+                        "datatype": "integer"
+                    },
+                    {
+                        "name": "Phenotype",
+                        "datatype": "integer"
+                    },
+                    {
+                        "name": "Population",
+                        "datatype": "string"
+                    },
+                    {
+                        "name": "Relationship",
+                        "datatype": "string"
+                    },
+                    {
+                        "name": "Siblings",
+                        "datatype": "string"
+                    },
+                    {
+                        "name": "Second_Order",
+                        "datatype": "string"
+                    },
+                    {
+                        "name": "Third_Order",
+                        "datatype": "string"
+                    },
+                    {
+                        "name": "Other_Comments",
+                        "datatype": "string"
+                    }
+                ]
+            },
+            {
+                "name": "bam_file",
+                "columns": [
+                    {
+                        "name": "Sample",
+                        "datatype": "string"
+                    },
+                    {
+                        "name": "BAM_File_Path",
+                        "datatype": "string"
+                    },
+                    {
+                        "name": "BAM_File_Ref",
+                        "datatype": "fileref"
+                    }
+                ]
+            },
+            {
+                "name": "vcf_file",
+                "columns": [
+                    {
+                        "name": "VCF_File_Path",
+                        "datatype": "string"
+                    },
+                    {
+                        "name": "VCF_File_Ref",
+                        "datatype": "fileref"
+                    },
+                    {
+                        "name": "Description",
+                        "datatype": "string"
+                    }
+                ]
+            }
+        ],
+        "relationships": [
+            {
+                "name": "pedigree_sample",
+                "to": {
+                    "table": "sample_info",
+                    "column": "Family_ID"
+                },
+                "from": {
+                    "table": "pedigree",
+                    "column": "Family_ID"
+                }
+            },
+            {
+                "name": "sample_bam",
+                "to": {
+                    "table": "bam_file",
+                    "column": "Sample"
+                },
+                "from": {
+                    "table": "sample_info",
+                    "column": "Sample"
+                }
+            }
+        ],
+        "assets": [
+            {
+                "name": "sample_pedigree",
+                "rootTable": "sample_info",
+                "rootColumn": "Sample",
+                "tables": [
+                    {
+                        "name": "sample_info",
+                        "columns": []
+                    },
+                    {
+                        "name": "pedigree",
+                        "columns": []
+                    }
+                ],
+                "follow": [
+                    "pedigree_sample"
+                ]
+            },
+            {
+                "name": "sample_bam",
+                "rootTable": "sample_info",
+                "rootColumn": "Sample",
+                "tables": [
+                    {
+                        "name": "sample_info",
+                        "columns": []
+                    },
+                    {
+                        "name": "bam_file",
+                        "columns": []
+                    }
+                ],
+                "follow": [
+                    "sample_bam"
+                ]
+            }
+        ]
+    }
+}
