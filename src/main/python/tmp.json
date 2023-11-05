@@ -1,0 +1,182 @@
+{
+    "snapshot": {
+        "id": "e26d9526-d2df-4a46-ae49-b2530398f5aa",
+        "name": "SnapshotWithAdditiveSchemaUpdates",
+        "description": "snapshot with schema updates",
+        "createdDate": "2023-10-19T18:37:57.556159Z",
+        "consentCode": null,
+        "source": [
+            {
+                "dataset": {
+                    "id": "ae1fcada-e87e-462a-ae86-134ee2833a04",
+                    "name": "Azure_V2F_GWAS_Summary_Statistics",
+                    "description": "Summary statistics from V2F datasets",
+                    "defaultProfileId": "356f4c1a-dd7c-468b-bf24-66ad91f2a2c4",
+                    "createdDate": "2023-06-02T12:17:46.208728Z",
+                    "storage": [
+                        {
+                            "region": "centralus",
+                            "cloudResource": "application_deployment",
+                            "cloudPlatform": "azure"
+                        },
+                        {
+                            "region": "centralus",
+                            "cloudResource": "storage_account",
+                            "cloudPlatform": "azure"
+                        },
+                        {
+                            "region": "centralus",
+                            "cloudResource": "synapse_workspace",
+                            "cloudPlatform": "azure"
+                        }
+                    ],
+                    "secureMonitoringEnabled": false,
+                    "cloudPlatform": "azure",
+                    "dataProject": null,
+                    "storageAccount": "tdrshtiuutnqwclzhkiljupw",
+                    "phsId": null,
+                    "selfHosted": false,
+                    "predictableFileIds": false,
+                    "tags": [],
+                    "resourceLocks": {
+                        "exclusive": null
+                    }
+                },
+                "datasetProperties": null,
+                "asset": "AddedTableVariantAsset"
+            }
+        ],
+        "tables": [
+            {
+                "name": "AddedTable",
+                "columns": [
+                    {
+                        "name": "variant_id",
+                        "datatype": "string",
+                        "array_of": false,
+                        "required": false
+                    },
+                    {
+                        "name": "random_data",
+                        "datatype": "string",
+                        "array_of": false,
+                        "required": false
+                    }
+                ],
+                "primaryKey": [],
+                "partitionMode": "none",
+                "datePartitionOptions": null,
+                "intPartitionOptions": null,
+                "rowCount": 4
+            },
+            {
+                "name": "variant",
+                "columns": [
+                    {
+                        "name": "id",
+                        "datatype": "string",
+                        "array_of": false,
+                        "required": false
+                    },
+                    {
+                        "name": "alt",
+                        "datatype": "string",
+                        "array_of": false,
+                        "required": false
+                    },
+                    {
+                        "name": "chromosome",
+                        "datatype": "string",
+                        "array_of": false,
+                        "required": false
+                    },
+                    {
+                        "name": "position",
+                        "datatype": "integer",
+                        "array_of": false,
+                        "required": false
+                    },
+                    {
+                        "name": "reference",
+                        "datatype": "string",
+                        "array_of": false,
+                        "required": false
+                    },
+                    {
+                        "name": "NewColumn",
+                        "datatype": "string",
+                        "array_of": false,
+                        "required": false
+                    }
+                ],
+                "primaryKey": [],
+                "partitionMode": "none",
+                "datePartitionOptions": null,
+                "intPartitionOptions": null,
+                "rowCount": 4
+            }
+        ],
+        "relationships": [
+            {
+                "name": "new_variant",
+                "from": {
+                    "table": "variant",
+                    "column": "id"
+                },
+                "to": {
+                    "table": "AddedTable",
+                    "column": "variant_id"
+                }
+            },
+            {
+                "name": "reversed_new_variant",
+                "from": {
+                    "table": "AddedTable",
+                    "column": "variant_id"
+                },
+                "to": {
+                    "table": "variant",
+                    "column": "id"
+                }
+            }
+        ],
+        "profileId": "356f4c1a-dd7c-468b-bf24-66ad91f2a2c4",
+        "dataProject": null,
+        "accessInformation": null,
+        "creationInformation": null,
+        "cloudPlatform": "azure",
+        "properties": null,
+        "duosFirecloudGroup": null,
+        "globalFileIds": false,
+        "compactIdPrefix": null,
+        "tags": [],
+        "resourceLocks": {
+            "exclusive": null
+        }
+    },
+    "validatedPrimaryKeys": false,
+    "format": {
+        "parquet": {
+            "location": {
+                "tables": [
+                    {
+                        "name": "AddedTable",
+                        "paths": [
+                            "https://tdrshtiuutnqwclzhkiljupw.blob.core.windows.net/e26d9526-d2df-4a46-ae49-b2530398f5aa/metadata%2Fparquet%2FAddedTable%2Fvariant_AddedTable_relationship.parquet?sv=2022-11-02&spr=https&se=2023-10-20T16%3A59%3A50Z&sp=rl&sig=uLKa5JKlh8v6jCjYF%2F3Fv81tu7idAT2z2mb1YH8GIiI%3D&sr=c&rscd=sholdendev%40gmail.com",
+                            "https://tdrshtiuutnqwclzhkiljupw.blob.core.windows.net/e26d9526-d2df-4a46-ae49-b2530398f5aa/metadata%2Fparquet%2FAddedTable%2Fvariant_AddedTable_relationship.parquet%2F00F985AA-A2D1-4374-A9F6-6306EFDB884F_210_0-1.parquet?sv=2022-11-02&spr=https&se=2023-10-20T16%3A59%3A50Z&sp=rl&sig=uLKa5JKlh8v6jCjYF%2F3Fv81tu7idAT2z2mb1YH8GIiI%3D&sr=c&rscd=sholdendev%40gmail.com"
+                        ]
+                    },
+                    {
+                        "name": "variant",
+                        "paths": [
+                            "https://tdrshtiuutnqwclzhkiljupw.blob.core.windows.net/e26d9526-d2df-4a46-ae49-b2530398f5aa/metadata%2Fparquet%2Fvariant%2Froot.parquet?sv=2022-11-02&spr=https&se=2023-10-20T16%3A59%3A50Z&sp=rl&sig=uLKa5JKlh8v6jCjYF%2F3Fv81tu7idAT2z2mb1YH8GIiI%3D&sr=c&rscd=sholdendev%40gmail.com",
+                            "https://tdrshtiuutnqwclzhkiljupw.blob.core.windows.net/e26d9526-d2df-4a46-ae49-b2530398f5aa/metadata%2Fparquet%2Fvariant%2Froot.parquet%2F544E38C4-AE1D-4EAE-AC8C-A596E273F12C_207_0-1.parquet?sv=2022-11-02&spr=https&se=2023-10-20T16%3A59%3A50Z&sp=rl&sig=uLKa5JKlh8v6jCjYF%2F3Fv81tu7idAT2z2mb1YH8GIiI%3D&sr=c&rscd=sholdendev%40gmail.com"
+                        ]
+                    }
+                ]
+            },
+            "manifest": "https://tdrshtiuutnqwclzhkiljupw.blob.core.windows.net/e26d9526-d2df-4a46-ae49-b2530398f5aa/metadata%2Fmanifests%2FT8qoGa8-SHSWn4CNprLw9g%2Fmanifest.json?sv=2022-11-02&spr=https&se=2023-10-21T16%3A44%3A50Z&sp=rwl&sig=JrZbQZWHsR1j8LCNR9Tj5J1hc9Cq%2BCrRBXYjJ7Y5i%2Fw%3D&sr=c&rscd=sholdendev%40gmail.com"
+        },
+        "workspace": null
+    }
+}
