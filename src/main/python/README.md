@@ -14,7 +14,7 @@ docker run --rm -p 8888:8888 --name jupyter jupyter/minimal-notebook
 ```
 
 2. In the logs, you will see a section similar to the one below, copy the URL
-starting with `http://127.0.0.1:8888` to the clipboard
+starting with `http://127.0.0.1:8888` including its token to the clipboard
 
 ```
 [C 20:53:41.359 NotebookApp] 
@@ -33,10 +33,10 @@ docker exec -it jupyter /bin/sh
 pip install data-repo-client
 ```
 
-4. Start up VSCode, then select `View -> Command Palette -> Jupyter: Create New Blank Jupyter Notebook`
+4. Start up VSCode, then select `View -> Command Palette -> Create: New Jupyter Notebook`
 (or open an already existing notebook)
 
-5. In the Jupyter menubar, select `Jupyter Server -> Existing`, paste the URL
+5. In the Jupyter menubar, select `Select Kernel -> Existing Jupyter Server`, paste the URL
 from step 2 in the input box, and press `Enter` to confirm your input. You
 should see a green lock icon next to the URL if this process is successful.
 
